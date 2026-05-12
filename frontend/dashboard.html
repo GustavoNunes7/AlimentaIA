@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+
+    <title>Dashboard AlimentaIA</title>
+
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>🍽 AlimentaIA</h1>
+
+      <div id="usuario"></div>
+
+      <!-- ===================== -->
+      <!-- LIXEIRO -->
+      <!-- ===================== -->
+
+      <div id="areaLixeiro" class="card" style="display: none">
+        <h2>🗑 Área do Lixeiro</h2>
+
+        <p>Controle de resíduos alimentares</p>
+
+        <form id="formResiduos">
+          <input type="text" id="tipoResiduo" placeholder="Tipo de Resíduo" />
+
+          <input
+            type="number"
+            id="quantidadeResiduo"
+            placeholder="Quantidade"
+          />
+
+          <button type="submit">Registrar Resíduo</button>
+        </form>
+      </div>
+
+      <!-- ===================== -->
+      <!-- NUTRICIONISTA -->
+      <!-- ===================== -->
+
+      <div id="areaNutricionista" class="card" style="display: none">
+        <h2>🥗 Área da Nutricionista</h2>
+
+        <p>Controle alimentar e aceitação</p>
+
+        <!-- IA -->
+
+        <div class="card">
+          <h2>🤖 IA Nutricional</h2>
+
+          <form id="formularioIA">
+            <input
+              type="number"
+              id="temperatura"
+              placeholder="Temperatura"
+              readonly
+            />
+
+            <input type="number" id="pessoas" placeholder="Número de Pessoas" />
+
+            <input type="number" id="aceitacao" placeholder="Aceitação" />
+
+            <select id="clima">
+              <option>Ensolarado</option>
+              <option>Chuvoso</option>
+              <option>Nublado</option>
+            </select>
+
+            <button type="submit">Gerar Previsão</button>
+          </form>
+
+          <div id="resultado"></div>
+        </div>
+
+        <!-- CARDÁPIO -->
+
+        <form id="formCardapio">
+          <input type="text" id="refeicao" placeholder="Refeição" />
+
+          <input type="number" id="aceitacaoCardapio" placeholder="Aceitação" />
+
+          <button type="submit">Registrar Cardápio</button>
+        </form>
+      </div>
+
+      <!-- ===================== -->
+      <!-- COZINHEIRA -->
+      <!-- ===================== -->
+
+      <div id="areaCozinheira" class="card" style="display: none">
+        <h2>👩‍🍳 Área da Cozinheira</h2>
+
+        <p>Controle da produção alimentar</p>
+
+        <!-- IA -->
+
+        <div class="card">
+          <h2>🤖 IA de Produção</h2>
+
+          <p>Acompanhe desperdício e produção</p>
+        </div>
+
+        <form id="formProducao">
+          <input
+            type="number"
+            id="refeicoes"
+            placeholder="Quantidade Produzida"
+          />
+
+          <button type="submit">Registrar Produção</button>
+        </form>
+      </div>
+
+      <!-- ===================== -->
+      <!-- DISTRIBUIDORA -->
+      <!-- ===================== -->
+
+      <div id="areaDistribuidora" class="card" style="display: none">
+        <h2>🚚 Área da Distribuidora</h2>
+
+        <p>Controle de doações alimentares</p>
+
+        <form id="formDoacao">
+          <input type="text" id="instituicao" placeholder="Instituição" />
+
+          <input type="number" id="quantidadeDoacao" placeholder="Quantidade" />
+
+          <button type="submit">Registrar Doação</button>
+        </form>
+      </div>
+
+      <!-- ===================== -->
+      <!-- DIRETOR -->
+      <!-- ===================== -->
+
+      <div id="areaDiretor" class="card" style="display: none">
+        <h2>🧑‍💼 Área do Diretor</h2>
+
+        <p>Gerenciamento geral do sistema</p>
+
+        <!-- IA -->
+
+        <div class="card">
+          <h2>🤖 IA Estratégica</h2>
+
+          <p>Monitoramento geral de desperdício</p>
+
+          <div id="resultadoDiretor"></div>
+        </div>
+
+        <button onclick="carregarUsuarios()">Ver Usuários</button>
+
+        <button onclick="carregarRelatorio()">Ver Relatório</button>
+
+        <hr />
+
+        <h2>➕ Cadastro Funcionários</h2>
+
+        <form id="formFuncionario">
+          <input type="text" id="nomeFuncionario" placeholder="Nome" />
+
+          <input type="text" id="usuarioFuncionario" placeholder="Usuário" />
+
+          <input type="password" id="senhaFuncionario" placeholder="Senha" />
+
+          <select id="cargoFuncionario">
+            <option>Lixeiro</option>
+
+            <option>Nutricionista</option>
+
+            <option>Cozinheira</option>
+
+            <option>Distribuidora</option>
+
+            <option>Diretor</option>
+          </select>
+
+          <button type="submit">Cadastrar Funcionário</button>
+        </form>
+
+        <div id="usuarios"></div>
+
+        <div id="relatorio"></div>
+      </div>
+    </div>
+
+    <script src="dashboard.js"></script>
+  </body>
+</html>
